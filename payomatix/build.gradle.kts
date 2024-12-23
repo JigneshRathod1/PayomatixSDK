@@ -53,8 +53,8 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.pay.payomatix"
-                artifactId = project.name
-                version = project.version.toString()
+                artifactId = "payomatixSdk"
+                version = "1.0.0"
             }
         }
     }
