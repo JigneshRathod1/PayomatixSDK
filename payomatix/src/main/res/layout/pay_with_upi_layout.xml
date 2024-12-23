@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_top_color_white_12">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/dp_0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/dp_0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dp_20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/dp_20" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUpiID"
+        style="@style/My.TextInputLayout.FilledBox.Padding"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:hint="Enter UPI ID"
+        android:textColorHint="@color/hint_color"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeColor="@color/text_input_stroke_color"
+        app:cursorColor="@color/color_primary"
+        app:cursorErrorColor="@color/red"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/color_primary"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/guideLineTop">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtUpiID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="@dimen/sp_13" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHowToFindUpi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:drawableEnd="@drawable/forward_arrow"
+        android:drawableTint="@color/color_primary"
+        android:paddingVertical="@dimen/dp_5"
+        android:text="How to find UPI ID?"
+        android:textColor="@color/color_primary"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintTop_toBottomOf="@id/textInputUpiID" />
+
+    <View
+        android:id="@+id/dividerBelowVerified"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="#80000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHowToFindUpi" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPayNowUPI"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@drawable/button_enable_disable_selector"
+        android:enabled="false"
+        android:text="Pay Now"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@id/guideLineBottom"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/dividerBelowVerified" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomSheetDialogStyle" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateVisible</item>
+        <item name="colorControlActivated">#9e9e9e</item>
+    </style>
+
+    <style name="HelperTextStyle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">@dimen/sp_10</item>
+    </style>
+
+    <style name="My.TextInputLayout.FilledBox.Padding" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/MyThemeOverlayFilledPadding</item>
+    </style>
+
+    <style name="MyThemeOverlayFilledPadding">
+        <item name="editTextStyle">@style/MyTextInputEditText_filledBox_padding</item>
+    </style>
+
+    <style name="MyTextInputEditText_filledBox_padding" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <!-- left and right padding -->
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+
+        <!-- top and bottom padding -->
+        <item name="android:paddingTop">28dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="HintTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item> <!-- Change this to desired size -->
+    </style>
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_13"
+        android:paddingBottom="@dimen/dp_13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvTitle,imgArrow" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgPaymentLogo"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_0"
+            android:src="@drawable/ic_upi"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:paddingVertical="@dimen/dp_5"
+            android:paddingEnd="@dimen/dp_10"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toStartOf="@id/imgArrow"
+            app:layout_constraintStart_toEndOf="@id/imgPaymentLogo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="@dimen/dp_10"
+            tools:text="Net banking" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:src="@drawable/down_arrow"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOfferAvailable"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_dot"
+            android:maxLines="1"
+            android:text="Offers Available"
+            android:textColor="@color/dark_green"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintSubPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOfferAvailable">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSubPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="4"
+                tools:listitem="@layout/each_row_sub_payment_method" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViewMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:drawableEnd="@drawable/forward_arrow"
+                android:drawableTint="@color/color_primary"
+                android:paddingVertical="@dimen/dp_10"
+                android:text="view all banks"
+                android:textColor="@color/color_primary"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvSubPaymentMethod" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/layoutPayWithCard"
+            layout="@layout/pay_with_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOfferAvailable" />
+
+        <include
+            android:id="@+id/layoutPayWithUpi"
+            layout="@layout/pay_with_upi_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOfferAvailable" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/dividerBottom"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/divider_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
